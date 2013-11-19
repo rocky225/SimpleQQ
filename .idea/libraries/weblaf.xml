@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="weblaf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../iqq/lib/weblaf-1.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

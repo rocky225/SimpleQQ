@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="log4j-core-2.0-beta9">
+    <CLASSES>
+      <root url="file://D:/DownLoads/JAR/apache-log4j-2.0-beta9-bin/apache-log4j-2.0-beta9-bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/DownLoads/JAR/apache-log4j-2.0-beta9-bin/apache-log4j-2.0-beta9-bin" />
+    </SOURCES>
+    <jarDirectory url="file://D:/DownLoads/JAR/apache-log4j-2.0-beta9-bin/apache-log4j-2.0-beta9-bin" recursive="false" />
+    <jarDirectory url="file://D:/DownLoads/JAR/apache-log4j-2.0-beta9-bin/apache-log4j-2.0-beta9-bin" recursive="false" type="SOURCES" />
+  </library>
+</component>
