@@ -8,6 +8,7 @@ import iqq.app.service.IMEventService;
 
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
@@ -24,6 +25,10 @@ public class IMEventServiceImpl extends AbstractServiceImpl implements IMEventSe
 
     private Map<IMEventType, List<IMEventListener>> lookup;
 
+    public IMEventServiceImpl(){
+        lookup = new HashMap<IMEventType, List<IMEventListener>>();
+    }
+
     @Override
     public void broadcast(final IMEvent event) {
         // 如果正在调用的线程是当前 AWT EventQueue 的指派线程，则返回 true。
@@ -37,6 +42,18 @@ public class IMEventServiceImpl extends AbstractServiceImpl implements IMEventSe
                     doBroadcast(event);
                 }
             });
+        }
+    }
+
+    @Override
+    public void register(IMEventType[] intrestedEvents, IMEventListener listener) {
+        for(IMEventType type: intrestedEvents){
+            List<IMEventListener> list = lookup.get(type);
+            if(list == null){
+                list = new ArrayList<IMEventListener>();
+                lookup.put(type, list);
+            }
+            list.add(listener);
         }
     }
 

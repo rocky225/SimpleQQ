@@ -10,7 +10,7 @@ package iqq.app.event;
  */
 public enum IMEventType {
     /****启动和退出部分******/
-    APP_EXIT_READY,	//准备退出程序
+    APP_EXIT_READY,	 //准备退出程序
     APP_EXIT,		//退出程序
     CLIENT_OFFLINE,	//客户端离线
     CLIENT_ONLINE,	//客户端在线

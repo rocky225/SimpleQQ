@@ -4,6 +4,8 @@ import com.alee.laf.rootpane.WebWindow;
 import iqq.app.core.IMContext;
 import iqq.app.core.IMService;
 import iqq.app.event.IMEvent;
+import iqq.app.event.IMEventHandler;
+import iqq.app.event.IMEventHandlerProxy;
 import iqq.app.event.IMEventType;
 import iqq.app.service.IMEventService;
 import iqq.app.service.impl.IMEventServiceImpl;
@@ -94,6 +96,7 @@ public class IMApp implements IMContext {
                 e.printStackTrace();
             }
         }
+        IMEventHandlerProxy.register(this, this);
         IMEventService eventHub = (IMEventService) getSerivce(IMService.Type.EVENT);
         eventHub.broadcast(new IMEvent(IMEventType.LOGIN_READY));
     }
@@ -114,6 +117,28 @@ public class IMApp implements IMContext {
     @Override
     public <T extends IMService> T getSerivce(IMService.Type type) {
         return (T) services.get(type).service;
+    }
+
+    /**
+     * IMEventHandler注释方法用于IMEventHandlerProxy.java中注入到methodMap中,以便调用
+     * @param event
+     */
+    @IMEventHandler(IMEventType.LOGOUT_SUCCESS)
+    protected void processIMLogoutSuccess(IMEvent event){
+        if( appExiting ){
+//            shutdown();
+        }
+    }
+
+    /**
+     * IMEventHandler注释方法用于IMEventHandlerProxy.java中注入到methodMap中,以便调用
+     * @param event
+     */
+    @IMEventHandler(IMEventType.APP_EXIT_READY)
+    protected void processIMAppExitReady(IMEvent event){
+        appExiting = true;
+        IMEventService eventHub = (IMEventService) getSerivce(IMService.Type.EVENT);
+        eventHub.broadcast(new IMEvent(IMEventType.LOGOUT_REQUEST));
     }
 
     private static class IMServiceEntry implements Comparable<IMServiceEntry> {

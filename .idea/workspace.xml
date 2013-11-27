@@ -6,9 +6,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/a.dummy" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384752075180" ignored="false" />
     <file path="/SimpleQQ.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384841042646" ignored="false" />
-    <file path="/fragment.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384934880910" ignored="false" />
+    <file path="/fragment.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1385435147289" ignored="false" />
     <file path="/QQEncrypt.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384838707119" ignored="false" />
-    <file path="/IMApp.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384936572286" ignored="false" />
+    <file path="/IMApp.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1385433161882" ignored="false" />
     <file path="/IMService.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384911857512" ignored="false" />
     <file path="/IMLifeCycle.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384912978457" ignored="false" />
     <file path="/a.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384912740176" ignored="false" />
@@ -21,6 +21,7 @@
     <file path="$PROJECT_DIR$/src/iqq/app/core/IMServiceImpl.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384934899948" ignored="false" />
     <file path="/IMEvent.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384936313456" ignored="false" />
     <file path="/IMEventListener.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1384936108310" ignored="false" />
+    <file path="/IMEventHandlerProxy.java" changelist="ba3ccf96-e114-4189-bdb7-91f3b66b9649" time="1385433621078" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,16 +82,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IMApp.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="IMApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iqq/app/IMApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="35" selection-start="2709" selection-end="2709" vertical-scroll-proportion="-0.55252916">
+            <state line="136" column="2" selection-start="4129" selection-end="4174" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2476#2492#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#startWin#0;class#IMApp#0" expanded="false" />
-                <element signature="e#2397#2413#0" expanded="true" />
-                <element signature="e#3295#3427#0" expanded="true" />
-                <element signature="e#3416#3417#0" expanded="true" />
+                <element signature="docComment;field#data#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#eventType#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#target#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#cancelBubble#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#eventId#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#nextEventId#0;class#IMEvent#0" expanded="false" />
+                <element signature="docComment;field#relatedEvent#0;class#IMEvent#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,7 +114,7 @@
       <file leaf-file-name="IMEventServiceImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iqq/app/service/impl/IMEventServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="38" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+            <state line="61" column="73" selection-start="1839" selection-end="1854" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,10 +122,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IMEventListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventListener.java">
+      <file leaf-file-name="IMEventHandlerProxy.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventHandlerProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="47" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+            <state line="43" column="66" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.73905426">
+              <folding>
+                <element signature="e#687#716#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMEventType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="12" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,30 +152,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/rocky/qq/SimpleQQ.java" />
-        <option value="$PROJECT_DIR$/src/com/rocky/qq/test/SimpleQQ.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMLifeCycle.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMContext.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMException.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/iqq/app/event/IMEventType.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMModule.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/service/impl/AbstractServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/core/IMService.java" />
-        <option value="$PROJECT_DIR$/src/iqq/app/service/IMEventService.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/event/IMEventListener.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/event/IMEvent.java" />
+        <option value="$PROJECT_DIR$/src/iqq/app/service/IMEventService.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/service/impl/IMEventServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/iqq/app/event/IMEventHandler.java" />
         <option value="$PROJECT_DIR$/src/iqq/app/IMApp.java" />
+        <option value="$PROJECT_DIR$/src/iqq/app/event/IMEventHandlerProxy.java" />
+        <option value="$PROJECT_DIR$/src/iqq/app/event/IMEventType.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="316" />
-    <option name="y" value="78" />
-    <option name="width" value="1119" />
-    <option name="height" value="723" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -193,8 +219,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -343,6 +367,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,18 +377,19 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="fileTemplates" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../iqq/lib/weblaf-1.17.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -386,7 +413,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="SimpleQQ" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -402,6 +435,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -429,19 +475,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -541,27 +574,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="316" y="78" width="1119" height="723" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4239905" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27553445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24881741" sideWeight="0.59115046" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40884957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.72446555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6423358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39904988" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -643,16 +676,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../iqq/lib/weblaf-1.17.jar!/com/alee/laf/rootpane/WebWindow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="45" selection-start="464" selection-end="464" vertical-scroll-proportion="0.34131736" />
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/jdk1.7.0_13/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="793" column="56" selection-start="30969" selection-end="30969" vertical-scroll-proportion="0.5254237" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rocky/qq/test/SimpleQQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="56" selection-start="483" selection-end="483" vertical-scroll-proportion="-1.4391634" />
@@ -686,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="15" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iqq/app/core/IMModule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="20" selection-start="300" selection-end="300" vertical-scroll-proportion="0.44015443">
@@ -716,18 +732,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iqq/app/service/IMEventService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="55" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+        <state line="19" column="16" selection-start="468" selection-end="468" vertical-scroll-proportion="0.41762453">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iqq/app/service/impl/IMEventServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="73" selection-start="1839" selection-end="1854" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="12" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="28" selection-start="1907" selection-end="1907" vertical-scroll-proportion="0.7532467">
+        <state line="76" column="0" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;field#data#0;class#IMEvent#0" expanded="false" />
@@ -741,16 +778,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="47" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iqq/app/service/impl/IMEventServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="38" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+        <state line="18" column="18" selection-start="412" selection-end="412" vertical-scroll-proportion="0.5856164">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -759,13 +789,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iqq/app/IMApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="35" selection-start="2709" selection-end="2709" vertical-scroll-proportion="-0.55252916">
+        <state line="136" column="2" selection-start="4129" selection-end="4174" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#startWin#0;class#IMApp#0" expanded="false" />
-            <element signature="e#2397#2413#0" expanded="true" />
-            <element signature="e#3295#3427#0" expanded="true" />
-            <element signature="e#3416#3417#0" expanded="true" />
+            <element signature="e#2476#2492#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iqq/app/event/IMEventHandlerProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="66" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.73905426">
+          <folding>
+            <element signature="e#687#716#0" expanded="true" />
           </folding>
         </state>
       </provider>
