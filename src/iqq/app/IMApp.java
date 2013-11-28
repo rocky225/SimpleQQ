@@ -2,13 +2,17 @@ package iqq.app;
 
 import com.alee.laf.rootpane.WebWindow;
 import iqq.app.core.IMContext;
+import iqq.app.core.IMException;
 import iqq.app.core.IMService;
 import iqq.app.event.IMEvent;
 import iqq.app.event.IMEventHandler;
 import iqq.app.event.IMEventHandlerProxy;
 import iqq.app.event.IMEventType;
 import iqq.app.service.IMEventService;
+import iqq.app.service.IMModuleService;
 import iqq.app.service.impl.IMEventServiceImpl;
+import iqq.app.service.impl.IMModuleServiceImpl;
+import iqq.app.ui.module.UILoginModule;
 import org.apache.log4j.Logger;
 
 import javax.swing.*;
@@ -18,7 +22,7 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- * User: ss
+ * User: Rocky
  * Date: 11/19/13
  * Time: 2:31 PM
  * To change this template use File | Settings | File Templates.
@@ -37,6 +41,7 @@ public class IMApp implements IMContext {
     private IMApp() {
         this.services = new HashMap<IMService.Type, IMServiceEntry>();
         this.services.put(IMService.Type.EVENT, new IMServiceEntry(new IMEventServiceImpl(), 7));
+        this.services.put(IMService.Type.MODULE, new IMServiceEntry(new IMModuleServiceImpl(), 8));
         this.appExiting = false;
     }
 
@@ -96,6 +101,40 @@ public class IMApp implements IMContext {
                 e.printStackTrace();
             }
         }
+
+        // 初始化所有的Module,并使用IMEventHandlerProxy.register,把module的方法注入到methodMap中
+        // IMModuleService is ModuleServiceImpl
+        IMModuleService ms = (IMModuleService) getSerivce(IMService.Type.MODULE);
+        try {
+            System.out.println("starting QQLogic...");
+//            ms.installModule(new QQLogicModule());
+//            ms.installModule(new QQMsgHistoryModule());
+//            ms.installModule(new QQCacheModule());
+//            ms.installModule(new QQMsgManagerModule());
+//            ms.installModule(new QQAccountModule());
+
+            System.out.println("starting UILoginModule...");
+//            ms.installModule(new UIVerifyModule());
+//            ms.installModule(new UIProxyModule());
+            ms.installModule(new UILoginModule());
+//            ms.installModule(new UIMainModule());
+//            ms.installModule(new UIChatModule());
+//            ms.installModule(new UIPopupModule());
+//            ms.installModule(new UITrayModule());
+//            ms.installModule(new UINotificationModule());
+//            ms.installModule(new UISoundModule());
+//            ms.installModule(new UIPicPreviewModule());
+//            ms.installModule(new UIGroupMemberModule());
+//            ms.installModule(new UIMsgHistoryModule());
+//            ms.installModule(new UIHoverInfoCardModule());
+//            ms.installModule(new UISettingModule());
+//            ms.installModule(new UIUpdateModule());
+
+        } catch (IMException e) {
+//            LOG.error("start error!!!", e);
+            System.out.println("start error!!!") ;
+        }
+
         IMEventHandlerProxy.register(this, this);
         IMEventService eventHub = (IMEventService) getSerivce(IMService.Type.EVENT);
         eventHub.broadcast(new IMEvent(IMEventType.LOGIN_READY));
