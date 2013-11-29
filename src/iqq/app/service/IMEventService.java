@@ -15,15 +15,17 @@ import iqq.app.event.IMEventType;
 public interface IMEventService extends IMService {
     /**
      * 广播一个事件，所有对这个感兴趣的监听器都会被调用
+     *
      * @param event
      */
     public void broadcast(IMEvent event);
 
-    /***
+    /**
      * 注册自己感兴趣的事件到事件中心
      * 如果该模块被卸载或者禁用了,请务必取消注册
-     * @param intrestedEvents	感兴趣的事件ID，可以是多个
-     * @param listener			监听器
+     *
+     * @param intrestedEvents 感兴趣的事件ID，可以是多个
+     * @param listener        监听器
      */
     public void register(IMEventType[] intrestedEvents, IMEventListener listener);
 }

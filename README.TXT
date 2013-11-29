@@ -4,6 +4,7 @@ GetLoginSigAction.java
 CheckVerifyAction.java
 https://ssl.ptlogin2.qq.com/check?uin=1431444862&appid=1003903&js_ver=10038&js_type=0&login_sig=v6Lv7W4zArmx1OH0J8jhWxUaksxFj8aKLTmRwnr*eV0Wz7bnVlxY2uYj1mGcAHKW&u1=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html&r=0.04289448520406802
 https://ssl.ptlogin2.qq.com/check?uin=   {qq号}    &appid=1003903&js_ver=10038&js_type=0&login_sig=                    {login_sig}                              &u1=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html&r={随机数}
+return ptui_checkVC('1','751a5166a6190d63609651b60ca126ce295bac11855d938a','\x00\x00\x00\x00\x55\x52\x1d\x7e');
 
 GetCaptchaImageAction.java
 http://captcha.qq.com/getimage?r=0.31845641666674285&uin=1431444862&aid=1003903

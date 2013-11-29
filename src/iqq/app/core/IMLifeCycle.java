@@ -12,12 +12,14 @@ package iqq.app.core;
 public interface IMLifeCycle {
     /**
      * 初始化，在使用之前调用
-     * @param context	初始化失败抛出
+     *
+     * @param context 初始化失败抛出
      */
     public void init(IMContext context) throws IMException;
 
     /**
      * 销毁，在使用完毕之后调用
+     *
      * @throws QQException 销毁失败抛出
      */
     public void destroy() throws IMException;

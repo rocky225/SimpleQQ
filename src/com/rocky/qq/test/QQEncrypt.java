@@ -4,14 +4,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ss
- * Date: 11/19/13
- * Time: 1:22 PM
- * To change this template use File | Settings | File Templates.
+ * QQ加密算法
  */
 public class QQEncrypt {
-    /***
+    /**
      * 计算登录时密码HASH值
      *
      * @param uin
@@ -19,14 +15,14 @@ public class QQEncrypt {
      * @param verify
      * @return
      */
-    public  String encrypt(long uin, String plain, String verify) {
+    public static String encrypt(long uin, String plain, String verify) {
         byte[] data = concat(md5(plain.getBytes()), long2bytes(uin));
         String code = byte2HexString(md5(data));
         data = md5((code + verify.toUpperCase()).getBytes());
         return byte2HexString(data);
     }
 
-    private byte[] concat(byte[] bytes1, byte[] bytes2) {
+    private static byte[] concat(byte[] bytes1, byte[] bytes2) {
         byte[] big = new byte[bytes1.length + bytes2.length];
         System.arraycopy(bytes1, 0, big, 0, bytes1.length);
         System.arraycopy(bytes2, 0, big, bytes1.length, bytes2.length);
@@ -39,7 +35,7 @@ public class QQEncrypt {
      * @param bytes
      * @return
      */
-    private byte[] md5(byte[] bytes) {
+    private static byte[] md5(byte[] bytes) {
         MessageDigest dist = null;
         byte[] result = null;
         try {
@@ -57,10 +53,10 @@ public class QQEncrypt {
      * @param b
      * @return
      */
-    private String byte2HexString(byte[] b) {
+    private static String byte2HexString(byte[] b) {
         StringBuffer sb = new StringBuffer();
-        char[] hex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-                '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+        char[] hex = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8',
+                '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         if (b == null)
             return "null";
 
@@ -85,7 +81,7 @@ public class QQEncrypt {
      * @param i
      * @return
      */
-    public byte[] long2bytes(long i) {
+    public static byte[] long2bytes(long i) {
         byte[] b = new byte[8];
         for (int m = 0; m < 8; m++, i >>= 8) {
             b[7 - m] = (byte) (i & 0x000000FF); // 奇怪, 在C# 整型数是低字节在前 byte[]

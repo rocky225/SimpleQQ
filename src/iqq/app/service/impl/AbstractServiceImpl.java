@@ -5,7 +5,7 @@ import iqq.app.core.IMException;
 import iqq.app.core.IMModule;
 
 /**
- *  <br></br>
+ * <br></br>
  * Created with IntelliJ IDEA.<br/>
  * User: ss<br/>
  * Date: 11/20/13<br/>

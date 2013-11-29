@@ -1,5 +1,8 @@
 package iqq.app.ui.module;
 
+import com.alee.laf.checkbox.WebCheckBox;
+import com.alee.laf.combobox.WebComboBox;
+import com.alee.laf.text.WebPasswordField;
 import iqq.app.core.IMContext;
 import iqq.app.core.IMException;
 import iqq.app.event.IMEvent;
@@ -7,6 +10,9 @@ import iqq.app.event.IMEventHandler;
 import iqq.app.event.IMEventHandlerProxy;
 import iqq.app.event.IMEventType;
 import iqq.app.ui.IMFrameView;
+import iqq.app.ui.content.login.LoginPanel;
+
+import javax.swing.*;
 
 /**
  * <b>登录界面模块,负责界面的显示和UI事件的处理</b>
@@ -31,7 +37,7 @@ public class UILoginModule extends IMFrameView {
 
         // 初始化显示内容，登录面板
         loginPanel = new LoginPanel(this);
-        setContentPanel(loginPanel);
+//        setContentPanel(loginPanel);
 
         // 初始化用户登录信息
         initAccount();
@@ -40,16 +46,26 @@ public class UILoginModule extends IMFrameView {
         IMEventHandlerProxy.register(this, context);
     }
 
+    /**
+     * 初始化用户登录信息
+     */
+    private void initAccount() {
+        WebComboBox accoutCbx = (WebComboBox) getValue("account");
+        final WebPasswordField passwordFld = (WebPasswordField) getValue("password");
+//        StatusPopup statusPopup = (StatusPopup) getValue("status");
+        WebCheckBox rePwdCkb = (WebCheckBox) getValue("rememberPwd");
+    }
+
     private void initFrame() {
         // 设置标题
-        setTitle(I18NUtil.getMessage("app.name"));
-        setIconImage(SkinUtils.getImageIcon("appLogo").getImage());
+//        setTitle(I18NUtil.getMessage("app.name"));
+//        setIconImage(SkinUtils.getImageIcon("appLogo").getImage());
 
         // 设置程序宽度 和高度
-        setSize(SettingUtils.getInt("appWidth"), SettingUtils.getInt("appHeight"));
+//        setSize(SettingUtils.getInt("appWidth"), SettingUtils.getInt("appHeight"));
 
         // 设置在屏幕显示位置，右中
-        setLocation(LocationUtil.getScreenRight(getWidth(), getHeight()));
+//        setLocation(LocationUtil.getScreenRight(getWidth(), getHeight()));
         setAlwaysOnTop(true);
 
         // 关闭后退出程序

@@ -10,5 +10,5 @@ package iqq.app.core;
  * Time: 3:18 PM<br/>
  * To change this template use File | Settings | File Templates.
  */
-public interface IMModule extends IMLifeCycle{
+public interface IMModule extends IMLifeCycle {
 }

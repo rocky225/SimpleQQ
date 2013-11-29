@@ -29,7 +29,7 @@ import java.util.Map;
  * Time: 10:01 AM<br/>
  * To change this template use File | Settings | File Templates.
  */
-public class IMFrameView extends WebFrame implements IMModule,View{
+public class IMFrameView extends WebFrame implements IMModule, View {
 
     private static final long serialVersionUID = 4865581108740165663L;
     private int defaultCloseOperation = JFrame.HIDE_ON_CLOSE;
@@ -51,7 +51,7 @@ public class IMFrameView extends WebFrame implements IMModule,View{
                 // 关闭当前窗口
                 super.windowClosing(e);
                 // 调用broadcast通知后台关闭程序
-                if(getDefaultCloseOperation() == JFrame.EXIT_ON_CLOSE) {
+                if (getDefaultCloseOperation() == JFrame.EXIT_ON_CLOSE) {
                     IMEventService events = getContext().getSerivce(IMService.Type.EVENT);
                     events.broadcast(new IMEvent(IMEventType.APP_EXIT_READY));
                 }
@@ -75,7 +75,7 @@ public class IMFrameView extends WebFrame implements IMModule,View{
     }
 
     public IMTitleComponent getIMTitleComponent() {
-        if(this.titleComponent == null) {
+        if (this.titleComponent == null) {
             this.titleComponent = new IMTitleComponent(this);
         }
         return this.titleComponent;
@@ -95,12 +95,12 @@ public class IMFrameView extends WebFrame implements IMModule,View{
 //        firePropertyChange("appLogo", null, image);
     }
 
-    protected void broadcastIMEvent(IMEvent event){
+    protected void broadcastIMEvent(IMEvent event) {
         IMEventService eventHub = context.getSerivce(IMService.Type.EVENT);
         eventHub.broadcast(event);
     }
 
-    protected void broadcastIMEvent(IMEventType type, Object target){
+    protected void broadcastIMEvent(IMEventType type, Object target) {
         IMEventService eventHub = context.getSerivce(IMService.Type.EVENT);
         eventHub.broadcast(new IMEvent(type, target));
     }
@@ -113,7 +113,7 @@ public class IMFrameView extends WebFrame implements IMModule,View{
 
     @Override
     public void setContentPanel(WebPanel container) {
-//        setContentPane(container);
+        setContentPane(container);
 //        changeSkin(SkinUtils.getPainter(IMSkinService.Type.NPICON, "appBg"));
     }
 

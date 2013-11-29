@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="httpcomponents-asyncclient-4.0">
+    <CLASSES>
+      <root url="file://D:/DownLoads/httpcomponents-asyncclient-4.0-bin/httpcomponents-asyncclient-4.0/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/DownLoads/httpcomponents-asyncclient-4.0-bin/httpcomponents-asyncclient-4.0/lib" recursive="false" />
+  </library>
+</component>

@@ -16,16 +16,17 @@ import java.util.List;
  * Time: 9:50 AM<br/>
  * To change this template use File | Settings | File Templates.
  */
-public class IMModuleServiceImpl   extends AbstractServiceImpl implements IMModuleService{
+public class IMModuleServiceImpl extends AbstractServiceImpl implements IMModuleService {
 
     private List<IMModule> modules;
 
-    public IMModuleServiceImpl(){
+    public IMModuleServiceImpl() {
         this.modules = new ArrayList<IMModule>();
     }
 
     /**
-     *  call IMEventHandlerProxy.register
+     * call IMEventHandlerProxy.register
+     *
      * @param module implements AbstractModule
      * @throws IMException
      */

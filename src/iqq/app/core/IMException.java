@@ -2,7 +2,7 @@ package iqq.app.core;
 
 /**
  * IM异常，所有的接口都需要声明抛出IM异常
- *
+ * <p/>
  * Created with IntelliJ IDEA.<br/>
  * User: ss<br/>
  * Date: 11/20/13<br/>

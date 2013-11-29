@@ -6,11 +6,11 @@ import iqq.app.event.IMEventListener;
 import iqq.app.event.IMEventType;
 import iqq.app.service.IMEventService;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 /**
  * AbstractServiceImpl的实现类,作为一个广播
@@ -25,7 +25,7 @@ public class IMEventServiceImpl extends AbstractServiceImpl implements IMEventSe
 
     private Map<IMEventType, List<IMEventListener>> lookup;
 
-    public IMEventServiceImpl(){
+    public IMEventServiceImpl() {
         lookup = new HashMap<IMEventType, List<IMEventListener>>();
     }
 
@@ -47,9 +47,9 @@ public class IMEventServiceImpl extends AbstractServiceImpl implements IMEventSe
 
     @Override
     public void register(IMEventType[] intrestedEvents, IMEventListener listener) {
-        for(IMEventType type: intrestedEvents){
+        for (IMEventType type : intrestedEvents) {
             List<IMEventListener> list = lookup.get(type);
-            if(list == null){
+            if (list == null) {
                 list = new ArrayList<IMEventListener>();
                 lookup.put(type, list);
             }
@@ -60,14 +60,14 @@ public class IMEventServiceImpl extends AbstractServiceImpl implements IMEventSe
     private void doBroadcast(IMEvent event) {
         // 通过Type获取对应的Listener
         java.util.List<IMEventListener> list = lookup.get(event.getType());
-        if(list != null && list.size() > 0){
+        if (list != null && list.size() > 0) {
             list = new ArrayList<IMEventListener>(list);
             // 循环调用所有的Listener
-            for(IMEventListener listener: list){
+            for (IMEventListener listener : list) {
                 try {
                     // 调用其onIMEvent方法
                     listener.onIMEvent(event);
-                    if(event.isCancelBubble()){
+                    if (event.isCancelBubble()) {
                         return;
                     }
                 } catch (Throwable e) {

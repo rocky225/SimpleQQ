@@ -1,5 +1,7 @@
 package iqq.app.ui;
 
+import com.alee.laf.panel.WebPanel;
+
 import java.awt.*;
 
 /**
@@ -11,7 +13,7 @@ import java.awt.*;
  * Time: 10:08 AM<br/>
  * To change this template use File | Settings | File Templates.
  */
-public class BackgroundPanel {
+public class BackgroundPanel extends WebPanel {
 
     private static final long serialVersionUID = -4326635468326074828L;
 

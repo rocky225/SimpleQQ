@@ -2,7 +2,7 @@ package iqq.app.core;
 
 /**
  * IM环境上下文，所有的模块都是用IMContext来获取对象<br></br>
- *
+ * <p/>
  * Created with IntelliJ IDEA.<br/>
  * User: ss<br/>
  * Date: 11/20/13<br/>

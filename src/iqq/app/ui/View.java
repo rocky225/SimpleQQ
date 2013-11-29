@@ -15,6 +15,8 @@ import iqq.app.core.IMContext;
  */
 public interface View {
     public void changeSkin(Painter<?> painter);
+
     public void setContentPanel(WebPanel container);
+
     public IMContext getContext();
 }

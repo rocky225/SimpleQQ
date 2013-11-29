@@ -13,7 +13,6 @@ import iqq.app.service.IMModuleService;
 import iqq.app.service.impl.IMEventServiceImpl;
 import iqq.app.service.impl.IMModuleServiceImpl;
 import iqq.app.ui.module.UILoginModule;
-import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -132,7 +131,7 @@ public class IMApp implements IMContext {
 
         } catch (IMException e) {
 //            LOG.error("start error!!!", e);
-            System.out.println("start error!!!") ;
+            System.out.println("start error!!!");
         }
 
         IMEventHandlerProxy.register(this, this);
@@ -160,21 +159,23 @@ public class IMApp implements IMContext {
 
     /**
      * IMEventHandler注释方法用于IMEventHandlerProxy.java中注入到methodMap中,以便调用
+     *
      * @param event
      */
     @IMEventHandler(IMEventType.LOGOUT_SUCCESS)
-    protected void processIMLogoutSuccess(IMEvent event){
-        if( appExiting ){
+    protected void processIMLogoutSuccess(IMEvent event) {
+        if (appExiting) {
 //            shutdown();
         }
     }
 
     /**
      * IMEventHandler注释方法用于IMEventHandlerProxy.java中注入到methodMap中,以便调用
+     *
      * @param event
      */
     @IMEventHandler(IMEventType.APP_EXIT_READY)
-    protected void processIMAppExitReady(IMEvent event){
+    protected void processIMAppExitReady(IMEvent event) {
         appExiting = true;
         IMEventService eventHub = (IMEventService) getSerivce(IMService.Type.EVENT);
         eventHub.broadcast(new IMEvent(IMEventType.LOGOUT_REQUEST));
